@@ -59,7 +59,7 @@ public class ga_init_point {
         Pm = m;
     }
 
-    public void init(String filename, int preLineCnt) throws IOException {
+    public void init(String filename, int preLineCnt, int sx, int sy) throws IOException {
         // 读取数据
         int[] x;
         int[] y;
@@ -70,7 +70,9 @@ public class ga_init_point {
         distance = new int[cityNum][cityNum];
         x = new int[cityNum];
         y = new int[cityNum];
-        for (int i = 0; i < cityNum + preLineCnt; i++) {
+        x[0] = sx;
+        y[0] = sy;
+        for (int i = 0; i < cityNum + preLineCnt - 1; i++) {
             // 读取一行数据，数据格式1 6734 1453
             strbuff = data.readLine();
             if(i < preLineCnt)
@@ -81,13 +83,18 @@ public class ga_init_point {
             System.out.println(strbuff);
             strbuff = strbuff.trim();
             String[] strcol = strbuff.split(" ");
-            x[i - preLineCnt] = Integer.valueOf(strcol[0]);// x坐标
-            y[i - preLineCnt] = Integer.valueOf(strcol[1]);// y坐标
+            x[i - preLineCnt + 1] = Integer.valueOf(strcol[0]);// x坐标
+            y[i - preLineCnt + 1] = Integer.valueOf(strcol[1]);// y坐标
             //x[i] = Integer.valueOf(strcol[1]);// x坐标
             //y[i] = Integer.valueOf(strcol[2]);// y坐标
         }
+        //存储时间表
+
+
+
         // 计算距离矩阵
         // 针对具体问题，距离计算方法也不一样，此处用的是att48作为案例，它有48个城市，距离计算方法为伪欧氏距离，最优值为10628(不确定起始点的情况下)
+
         for (int i = 0; i < cityNum - 1; i++) {
             distance[i][i] = 0; // 对角线为0
             for (int j = i + 1; j < cityNum; j++) {
@@ -496,7 +503,8 @@ public class ga_init_point {
 		 */
     }
 
-    public void solve() {
+    public int[] solve() {
+
         int i;
         int k;
 
@@ -554,6 +562,7 @@ public class ga_init_point {
             System.out.print(bestTour[i] + "-->");
         }
         System.out.print(point);
+        return bestTour;
     }
 
 
