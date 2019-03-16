@@ -21,12 +21,12 @@ public class client_to_client {
 
     public static void inputData(int N, int M, int x0, int y0, int x1, int y1)
     {
-        xpath.add(x0);
-        ypath.add(y0);
         currentX = x0;
         currentY = y0;
         while(currentX != x1 || currentY != y1)
         {
+            xpath.add(currentX);
+            ypath.add(currentY);
             if(currentX < x1)
             {
                 currentX++;
@@ -43,12 +43,8 @@ public class client_to_client {
             {
                 currentY--;
             }
-            xpath.add(currentX);
-            ypath.add(currentY);
-        }
-        xpath.add(currentX);
-        ypath.add(currentY);
 
+        }
     }
 
 

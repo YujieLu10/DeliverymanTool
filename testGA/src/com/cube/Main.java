@@ -3,9 +3,7 @@ package com.cube;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_ADDPeer;
 
 import javax.xml.crypto.dsig.keyinfo.KeyName;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class Main {
 
         System.out.println("Start....");
         //TODO：读取120个文件列表
-        String pathname = "/Users/c-ten/Desktop/demo/hackdata2.txt";
+        String pathname = "/Users/c-ten/Desktop/demo/input_30.txt";
         int linecnt = 0;
         int N, M, sx = 1, sy = 1, Knum = 0;
         FileReader fileReader = null;
@@ -135,28 +133,49 @@ public class Main {
         ga_init_point ga = new ga_init_point(0, 30, Knum + 1, 10000, 0.7f, 0.9f);
 
         //ga_init_point ga = new ga_init_point(0,30, 48, 10000, 0.7f, 0.9f);
-        ga.init("/Users/c-ten/Desktop/demo/hackdata2.txt", linecnt - 1, sx, sy);
+        ga.init("/Users/c-ten/Desktop/demo/input_30.txt", linecnt - 1, sx, sy);
         int[] tour =  ga.solve();
 
-        System.out.println(x[1]);
-        System.out.println(y[1]);
+//        System.out.println(x[1]);
+//        System.out.println(y[1]);
         client_to_client.inputData(N, M, x[1], y[1], x[tour[0] + 1], y[tour[0] + 1]);
         for(int i = 0; i < tour.length - 2; i++)
         {
             client_to_client.inputData(N, M,x[tour[i] + 1],y[tour[i] + 1],x[tour[i + 1] + 1],y[tour[i + 1] + 1]);
-            System.out.println(x[tour[i] + 1]);
+//            System.out.println(x[tour[i] + 1]);
 
-            System.out.println(y[tour[i] + 1]);
+//            System.out.println(y[tour[i] + 1]);
         }
-        System.out.println(x[tour[tour.length - 2] + 1]);
-        System.out.println(y[tour[tour.length - 2] + 1]);
+        //System.out.println(x[tour[tour.length - 2] + 1]);
+        //System.out.println(y[tour[tour.length - 2] + 1]);
         client_to_client.inputData(N, M, x[tour[tour.length - 2] + 1], y[tour[tour.length - 2] + 1], x[1], y[1]);
+        /*
+        System.out.println();
+        for(int i = 0; i < client_to_client.xpath.size(); i++)
+        {
+            System.out.println(client_to_client.xpath.get(i) + " " + client_to_client.xpath.get(i));
+
+        }*/
+
+        File output = new File("/Users/c-ten/Desktop/demo/output.txt");
+        FileOutputStream fos = new FileOutputStream(output);
+        OutputStreamWriter dos = new OutputStreamWriter(fos);
+        dos.write(String.valueOf(ga.bestLength));
+        dos.write("\n");
+        for(int i = 0; i < client_to_client.xpath.size(); i++)
+        {
+            dos.write(String.valueOf(client_to_client.xpath.get(i)));
+            dos.write(" ");
+            dos.write(String.valueOf(client_to_client.xpath.get(i)));
+            dos.write("\n");
+        }
+        dos.close();
 
         //client_to_client.inputData(N, M, x[1], y[1], x[tour[0] + 1], y[tour[0] + 1]);
         //client_to_client.inputData(N, M, x[tour[0]], y[tour[0]], 3, 3);
         //client_to_client.inputData(N, M, 3, 3, 3, 1);
         //client_to_client.inputData(N, M, 3, 1, 1, 1);
-        int i;
+
         /*for (i = 0; i < tour.length - 2; i++)
         {
             System.out.println(i);

@@ -12,97 +12,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/cube/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="152" column="8" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+            <state relative-caret-position="227">
+              <caret line="162" column="46" lean-forward="false" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#743#751#0" expanded="true" />
+                <element signature="e#674#682#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cube/AStar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1539#1545#0" expanded="true" />
-                <element signature="e#5491#5492#0" expanded="true" />
-                <element signature="e#5541#5542#0" expanded="true" />
-                <element signature="e#5915#5916#0" expanded="true" />
-                <element signature="e#5939#5940#0" expanded="true" />
-                <element signature="e#5969#5970#0" expanded="true" />
-                <element signature="e#5995#5996#0" expanded="true" />
-                <element signature="e#6019#6020#0" expanded="true" />
-                <element signature="e#6043#6044#0" expanded="true" />
-                <element signature="e#6073#6074#0" expanded="true" />
-                <element signature="e#6099#6100#0" expanded="true" />
-                <element signature="e#6133#6134#0" expanded="true" />
-                <element signature="e#6166#6167#0" expanded="true" />
-                <element signature="e#6215#6216#0" expanded="true" />
-                <element signature="e#6259#6260#0" expanded="true" />
-                <element signature="e#6283#6284#0" expanded="true" />
-                <element signature="e#6307#6308#0" expanded="true" />
-                <element signature="e#6337#6338#0" expanded="true" />
-                <element signature="e#6363#6364#0" expanded="true" />
-                <element signature="e#6387#6388#0" expanded="true" />
-                <element signature="e#6411#6412#0" expanded="true" />
-                <element signature="e#6441#6442#0" expanded="true" />
-                <element signature="e#6467#6468#0" expanded="true" />
-                <element signature="e#6491#6492#0" expanded="true" />
-                <element signature="e#6515#6516#0" expanded="true" />
-                <element signature="e#6545#6546#0" expanded="true" />
-                <element signature="e#6571#6572#0" expanded="true" />
-                <element signature="e#6691#6692#0" expanded="true" />
-                <element signature="e#6733#6734#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassLoader.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="346" column="6" lean-forward="true" selection-start-line="346" selection-start-column="6" selection-end-line="346" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/System.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-              <folding>
-                <element signature="e#11597#11598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client_to_client.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client_to_client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cube/client_to_client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="380">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#549#558#0" expanded="true" />
@@ -115,21 +42,11 @@
       <file leaf-file-name="ga_init_point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cube/ga_init_point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4838">
-              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testGA.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testGA.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -149,6 +66,7 @@
       <find>input</find>
       <find>bestTour</find>
       <find>remainTime</find>
+      <find>最佳长度</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -159,10 +77,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/cube/ga_init_point.java" />
         <option value="$PROJECT_DIR$/src/com/cube/AStar.java" />
-        <option value="$PROJECT_DIR$/src/com/cube/Main.java" />
         <option value="$PROJECT_DIR$/src/com/cube/client_to_client.java" />
+        <option value="$PROJECT_DIR$/src/com/cube/ga_init_point.java" />
+        <option value="$PROJECT_DIR$/src/com/cube/Main.java" />
       </list>
     </option>
   </component>
@@ -364,13 +282,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/cube/Main.java</url>
-          <line>162</line>
+          <line>181</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/cube/Main.java</url>
-          <line>165</line>
+          <line>184</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -386,7 +304,7 @@
           <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#743#751#0" expanded="true" />
+            <element signature="e#674#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -413,32 +331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="346" column="6" lean-forward="true" selection-start-line="346" selection-start-column="6" selection-end-line="346" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cube/ga_init_point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4838">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -492,25 +384,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cube/Main.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="152" column="8" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#743#751#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-9">
+          <caret line="346" column="6" lean-forward="true" selection-start-line="346" selection-start-column="6" selection-end-line="346" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cube/client_to_client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="380">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#549#558#0" expanded="true" />
             <element signature="e#615#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cube/ga_init_point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cube/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="162" column="46" lean-forward="false" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#674#682#0" expanded="true" />
           </folding>
         </state>
       </provider>

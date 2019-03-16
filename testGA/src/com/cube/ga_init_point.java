@@ -14,7 +14,7 @@ public class ga_init_point {
     private int MAX_GEN; // 运行代数
     private int[][] distance; // 距离矩阵
     private int bestT;// 最佳出现代数
-    private int bestLength; // 最佳长度
+    public int bestLength; // 最佳长度
     private int[] bestTour; // 最佳路径
 
     // 初始种群，父代种群，行数表示种群规模，一行代表一个个体，即染色体，列表示染色体基因片段
