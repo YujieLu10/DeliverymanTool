@@ -59,7 +59,7 @@ public class client_path {
             {
                 continue;
             }
-            System.out.println(strbuff);
+            //System.out.println(strbuff);
             strbuff = strbuff.trim();
             String[] strcol = strbuff.split(" ");
             x[i - preLineCnt + 1] = Integer.valueOf(strcol[0]);
@@ -393,14 +393,6 @@ public class client_path {
             fitness[k] = evaluate(oldPopulation[k]);
         }
         countRate();
-        System.out.println("初始种群...");
-        for (k = 0; k < scale; k++) {
-            for (i = 0; i < cityNum-1; i++) {
-                System.out.print(oldPopulation[k][i] + ",");
-            }
-            System.out.println();
-            System.out.println("----" + fitness[k] + " " + instancePercent[k]);
-        }
 
         for (t = 0; t < MAX_GEN; t++) {
             evolution1();
@@ -414,26 +406,6 @@ public class client_path {
             }
             countRate();
         }
-
-        System.out.println("最后种群...");
-        for (k = 0; k < scale; k++) {
-            for (i = 0; i < cityNum-1; i++) {
-                System.out.print(oldPopulation[k][i] + ",");
-            }
-            System.out.println();
-            System.out.println("---" + fitness[k] + " " + instancePercent[k]);
-        }
-
-        System.out.println("最佳长度出现代数：");
-        System.out.println(bestT);
-        System.out.println("最佳长度");
-        System.out.println(bestLength);
-        System.out.println("最佳路径：");
-        System.out.print(point+"-->");
-        for (i = 0; i < cityNum-1; i++) {
-            System.out.print(bestTour[i] + "-->");
-        }
-        System.out.print(point);
         return bestTour;
     }
 }

@@ -3,14 +3,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.log;
 import static java.lang.Math.min;
 
 public class c_to_c_v2 {
 
-    public static int t = 0;
-    public static int[][] Rlight;
-    public static int[][] Glight;
-    public static int[][] passTime;
+    public static long t = 0;
+    public static long[][] Rlight;
+    public static long[][] Glight;
+    public static long[][] passTime;
     public static int startX;
     public static int startY;
     public static List<Integer> xpath = new ArrayList<Integer>();
@@ -32,20 +33,11 @@ public class c_to_c_v2 {
         int y = abs(ej - sj);
         int siChange = (si < ei) ? +1 : -1;
         int sjChange = (sj < ej) ? +1 : -1;
-        //List<List<Integer>> mapTime = new ArrayList<ArrayList<Integer>>();
-        int[][] mapTime = new int[x+1+2*Border][y + 1 + 2*Border];
-        int[][] routeMap = new int[x+1+2*Border][y+1+2*Border];
-        // int ** mapTime = new int*[x + 1 + 2 * Border];
-        // int ** routeMap = new int*[x + 1 + 2 * Border];
-        int curSi = si;
-        // vector<vector<int>> ret;
+        long[][] mapTime = new long[x+1+2*Border][y + 1 + 2*Border];
+        long[][] routeMap = new long[x+1+2*Border][y+1+2*Border];
 
-        // for(int i = 0; i <= x + 2 * Border; i++){
-        //     mapTime[i] = new int[y + 1 + 2 * Border]();
-        //     routeMap[i] = new int[y + 1 + 2 * Border]();
-        //     memset(mapTime[i],0,sizeof(int)*(y + 1 + 2 * Border));
-        //     memset(routeMap[i],-1,sizeof(int) * (y + 1 + 2 * Border));
-        // }
+        int curSi = si;
+
         int Ui = Border;
         int Uj = Border;
         routeMap[Border][Border] = 0; // start point
@@ -59,7 +51,7 @@ public class c_to_c_v2 {
                 int Mappj = sj - kj * sjChange; // Map中的坐标
                 if(Mappj < 1 || Mappj > lM) break;
                 routeMap[Ui][Uj - kj] = 3; // 都基于右边点
-                int nowTime = mapTime[Ui][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
+                long nowTime = mapTime[Ui][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
                 mapTime[Ui][Uj - kj] = nowTime + waitlight(nowTime, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
             }
             for(int kj = 1; kj <= y + Border; kj ++){
@@ -67,7 +59,7 @@ public class c_to_c_v2 {
                 int Mappj = sj + kj * sjChange; // Map中的坐标
                 if(Mappj < 1 || Mappj > lM) break;
                 routeMap[Ui][Uj + kj] = 1; // 都基于左边点
-                int nowTime = mapTime[Ui][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
+                long nowTime = mapTime[Ui][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
                 if(!((go == K + 1) && (Mappi == startX) && (Mappj == startY))){ //有可能遇到终点，终点的红绿灯等待时间不计入
                     nowTime += waitlight(nowTime, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 }
@@ -80,17 +72,17 @@ public class c_to_c_v2 {
             if(Mappi < 1 || Mappi > lN) break;
             //Uj 列
             routeMap[Ui - ki][Uj] = 4;
-            int nowTime = mapTime[Ui - ki +1][Uj] + 30 + passTime[Mappi + siChange][sj];
+            long nowTime = mapTime[Ui - ki +1][Uj] + 30 + passTime[Mappi + siChange][sj];
             mapTime[Ui - ki][Uj] = nowTime + waitlight(nowTime, Rlight[Mappi][sj], Glight[Mappi][sj]);
             // 更新Uj左边列
             for(int kj = 1; kj <= Border; kj++){
                 int Mappj = sj - kj * sjChange;
                 if(Mappj < 1 || Mappj > lM) break;
                 // 基于右边点
-                int nTimeJ = mapTime[Ui - ki][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
+                long nTimeJ = mapTime[Ui - ki][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
                 // 基于下边点
 
-                int nTimeI = mapTime[Ui - ki + 1][Uj - kj] + 30 + passTime[Mappi + siChange][Mappj];
+                long nTimeI = mapTime[Ui - ki + 1][Uj - kj] + 30 + passTime[Mappi + siChange][Mappj];
                 nTimeJ += waitlight(nTimeJ, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 nTimeI += waitlight(nTimeI, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 if(nTimeI < nTimeJ){
@@ -106,9 +98,9 @@ public class c_to_c_v2 {
                 int Mappj = sj + kj * sjChange;
                 if(Mappj < 1 || Mappj > lM) break;
                 // 基于左边点
-                int nTimeJ = mapTime[Ui - ki][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
+                long nTimeJ = mapTime[Ui - ki][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
                 // 基于下边点
-                int nTimeI = mapTime[Ui - ki + 1][Uj + kj] + 30 + passTime[Mappi + siChange][Mappj];
+                long nTimeI = mapTime[Ui - ki + 1][Uj + kj] + 30 + passTime[Mappi + siChange][Mappj];
                 nTimeJ += waitlight(nTimeJ, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 nTimeI += waitlight(nTimeI, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 if(nTimeI < nTimeJ){
@@ -126,7 +118,7 @@ public class c_to_c_v2 {
             if(Mappi < 1 || Mappi > lN) break;
             //Uj 列
             routeMap[Ui + ki][Uj] = 2;
-            int nowTime = mapTime[Ui + ki - 1][Uj] + 30 + passTime[Mappi - siChange][sj];
+            long nowTime = mapTime[Ui + ki - 1][Uj] + 30 + passTime[Mappi - siChange][sj];
             // cout << Mappi << ", " << sj << ": " << nowTime;
             if(!((go == K + 1) && (Mappi == startX) && (sj == startY))){ //有可能遇到终点，终点的红绿灯等待时间不计入
                 nowTime += waitlight(nowTime, Rlight[Mappi][sj], Glight[Mappi][sj]);
@@ -138,9 +130,9 @@ public class c_to_c_v2 {
                 int Mappj = sj - kj * sjChange;
                 if(Mappj < 1 || Mappj > lM) break;
                 // 基于右边点
-                int nTimeJ = mapTime[Ui + ki][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
+                long nTimeJ = mapTime[Ui + ki][Uj - kj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
                 // 基于上边点
-                int nTimeI = mapTime[Ui + ki - 1][Uj + kj] + 30 + passTime[Mappi - siChange][Mappj];
+                long nTimeI = mapTime[Ui + ki - 1][Uj + kj] + 30 + passTime[Mappi - siChange][Mappj];
                 nTimeJ += waitlight(nTimeJ, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 nTimeI += waitlight(nTimeI, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 if(nTimeI < nTimeJ){
@@ -158,9 +150,9 @@ public class c_to_c_v2 {
                 // cout << Mappj << " ? " << lM << endl;
                 if(Mappj < 1 || Mappj > lM) break;
                 // 基于左边点
-                int nTimeJ = mapTime[Ui + ki][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
+                long nTimeJ = mapTime[Ui + ki][Uj + kj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
                 // 基于上边点
-                int nTimeI = mapTime[Ui + ki - 1][Uj + kj] + 30 + passTime[Mappi - siChange][Mappj];
+                long nTimeI = mapTime[Ui + ki - 1][Uj + kj] + 30 + passTime[Mappi - siChange][Mappj];
                 if(!((go == K + 1) && (Mappi == startX) && (Mappj == startY))){ //有可能遇到终点，终点的红绿灯等待时间不计入
                     nTimeJ += waitlight(nTimeJ, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                     nTimeI += waitlight(nTimeI, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
@@ -174,8 +166,6 @@ public class c_to_c_v2 {
                 }
             }
         }
-        // draw(mapTime,x+1+2*Border,y+1+2*Border);
-        // draw(routeMap,x+1+2*Border,y+1+2*Border);
         // 更新多少次
         for(int ii = 1; ii < x + 2 * Border; ii ++){
             int Mappi = si + (ii - Ui) * siChange;
@@ -183,12 +173,12 @@ public class c_to_c_v2 {
             for(int jj = 1; jj < y + 2 * Border; jj ++){
                 int Mappj = sj + (jj - Uj) * sjChange;
                 if(Mappj < 2 || Mappj > lM - 1) continue;
-                int timeL = mapTime[ii][jj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
-                int timeT = mapTime[ii - 1][jj] + 30 + passTime[Mappi - siChange][Mappj];
-                int timeR = mapTime[ii][jj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
-                int timeD = mapTime[ii + 1][jj] + 30 + passTime[Mappi + siChange][Mappj];
-                int minTime = minValue(timeL, timeT, timeR, timeD);
-                int index = minIndex(timeL, timeT, timeR, timeD,minTime);
+                long timeL = mapTime[ii][jj - 1] + 30 + passTime[Mappi][Mappj - sjChange];
+                long timeT = mapTime[ii - 1][jj] + 30 + passTime[Mappi - siChange][Mappj];
+                long timeR = mapTime[ii][jj + 1] + 30 + passTime[Mappi][Mappj + sjChange];
+                long timeD = mapTime[ii + 1][jj] + 30 + passTime[Mappi + siChange][Mappj];
+                long minTime = minValue(timeL, timeT, timeR, timeD);
+                long index = minIndex(timeL, timeT, timeR, timeD,minTime);
                 if(!(go == K + 1) && (Mappi == startX) && (Mappj == startY)){ //有可能遇到终点，终点的红绿灯等待时间不计入
                     minTime += waitlight(minTime, Rlight[Mappi][Mappj], Glight[Mappi][Mappj]);
                 }
@@ -213,40 +203,30 @@ public class c_to_c_v2 {
             }else if(routeMap[curRi][curRj] == 4){ // 从下来
                 curRi += 1;
             }
-            else{
-                //cout << "error: " << curRi <<","<< curRj << ": "<< routeMap[curRi][curRj] << endl;
-                //assert(1 == 0); // not ok now;
-            }
+
             if(routeMap[curRi][curRj] <= 0) break;
             rxpath.add(si + (curRi-Border) * siChange);
             rypath.add(sj + (curRj-Border) * sjChange);
-            // vector<int> thisNode = {si + (curRi-Border) * siChange, sj + (curRj-Border) * sjChange};
-            // ret.push_back(thisNode);
         }
         for(int i = rxpath.size() - 1; i >= 0; i--){
             xpath.add(rxpath.get(i));
             ypath.add(rypath.get(i));
         }
         t = mapTime[x + Border][y+Border];
-        
-        // reverse(ret.begin(),ret.end());
         return;
     }
-    public static int minIndex(int a, int b, int c, int d, int min){
+    public static int minIndex(long a, long b, long c, long d, long min){
        if(a == min) return 1;
        else if(b == min) return 2;
        else if(c == min) return 3;
        else if(d == min) return 4;
-       /*else{
-//           assert(0 == 1);
-       }*/
-       //TODO
        else return -1;
     }
-    public static int minValue(int a, int b, int c, int d){
+    public static long minValue(long a, long b, long c, long d){
+
         return min(min(a,b),min(c,d));
     }
-    public static int waitlight(int t, int r, int g){ // 需要等待红灯的时间
+    public static long waitlight(long t, long r, long g){ // 需要等待红灯的时间
         if(r == 0) return 0;
         if(t % (r+g) < g){
             return t %(r+g) + r;
