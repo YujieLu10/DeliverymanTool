@@ -1,19 +1,8 @@
-周五
+Main.java : File Read and Write
 
- TIME | EVENT |
--|-
-15:30-17:30 | analysis |
- 
-- [] 最简单的邮递员问题demo ：1. 满足输入输出格式（输入的红绿灯时间暂时忽略）2.假定各路口红绿灯时间相同的解
-- [] 真问题 算法 数据
-- [] 其他可能方法调研 如machine learning
+client_path.java : Genetic Algorithm to find the best client sequence
 
+client_to_client.java : Calculate the path and time between two clients by Naive Algorithm
 
-周六
+c_to_c_v2.java : Calculate the path and time between two clients by Greedy Algorithm
 
-| TIME | EVENT |
-|---|---:|
-
-
-
-周日
